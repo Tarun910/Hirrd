@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import { Outlet } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
 const AppLayout = () => {
   return (
     <div>
@@ -10,7 +10,15 @@ const AppLayout = () => {
         <Outlet />
       </main>
       <div className="p-10 text-center bg-gray-800 mt-10">
-        Made with 💗 by RoadsideCoder
+        Created by{" "}
+        <a
+          href="https://www.linkedin.com/in/tarun910/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:underline"
+        >
+          Tarun Namdev
+        </a>
       </div>
     </div>
   );

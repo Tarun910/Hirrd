@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import React, { useEffect, useState } from "react";
 import { Heart, MapPinIcon, Trash2Icon } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -11,8 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import useFetch from "@/hooks/use-fetch";
 import { deleteJob, saveJob } from "@/api/apiJobs";
-import { useUser } from "@clerk/clerk-react";
-import { useEffect, useState } from "react";
+import { useUser } from "@clerk/clerk-react"; // Ensure this line is present
 import { BarLoader } from "react-spinners";
 
 const JobCard = ({
@@ -22,11 +22,10 @@ const JobCard = ({
   isMyJob = false,
 }) => {
   const [saved, setSaved] = useState(savedInit);
-
   const { user } = useUser();
 
   const { loading: loadingDeleteJob, fn: fnDeleteJob } = useFetch(deleteJob, {
-    job_id: job.id,
+    job_id: job?.id,
   });
 
   const {
@@ -52,6 +51,11 @@ const JobCard = ({
     if (savedJob !== undefined) setSaved(savedJob?.length > 0);
   }, [savedJob]);
 
+  const jobDescription = job?.description || "No description available.";
+  const descriptionPreview = jobDescription.includes(".")
+    ? jobDescription.substring(0, jobDescription.indexOf(".") + 1)
+    : jobDescription;
+
   return (
     <Card className="flex flex-col">
       {loadingDeleteJob && (
@@ -72,13 +76,19 @@ const JobCard = ({
       </CardHeader>
       <CardContent className="flex flex-col gap-4 flex-1">
         <div className="flex justify-between">
-          {job.company && <img src={job.company.logo_url} className="h-6" />}
+          {job.company && (
+            <img
+              src={job.company.logo_url}
+              className="h-6"
+              alt={`${job.company.name} logo`}
+            />
+          )}
           <div className="flex gap-2 items-center">
             <MapPinIcon size={15} /> {job.location}
           </div>
         </div>
         <hr />
-        {job.description.substring(0, job.description.indexOf("."))}.
+        {descriptionPreview}
       </CardContent>
       <CardFooter className="flex gap-2">
         <Link to={`/job/${job.id}`} className="flex-1">
