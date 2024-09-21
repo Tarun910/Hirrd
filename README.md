@@ -1,5 +1,5 @@
 
-![hirrd 1](https://github.com/user-attachments/assets/1da23b25-1f29-4402-be74-03685d9b732d)
+<!-- ![hirrd 1](https://github.com/user-attachments/assets/1da23b25-1f29-4402-be74-03685d9b732d) -->
 
 
 # Hirrd
@@ -44,13 +44,6 @@ This project is a **Full Stack Job Portal App** named "Hired," which demonstrate
 
 
 
-## How to Run:
-1. Clone the repository.
-2. Install the required dependencies:
-   ```bash
-   npm install
-
-
 ### Make sure to create a `.env` file with following variables -
 
 ```
@@ -59,3 +52,14 @@ VITE_SUPABASE_ANON_KEY=
 VITE_CLERK_PUBLISHABLE_KEY=
 ```
 
+
+## How to Run:
+1. Clone the repository.
+2. Install the required dependencies:
+   ```bash
+   npm install
+
+3. Start the development server:
+   ```bash
+   npm start
+4. Open the app in your browser at [http://localhost:3000](http://localhost:3000).
