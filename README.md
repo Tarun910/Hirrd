@@ -1,19 +1,11 @@
-# Full Stack Job Portal with React JS, Tailwind CSS, Supabase, Clerk, Shadcn UI Tutorial 🔥🔥
 
 ![hirrd 1](https://github.com/user-attachments/assets/1da23b25-1f29-4402-be74-03685d9b732d)
 
-### Make sure to create a `.env` file with following variables -
 
-```
-VITE_SUPABASE_URL=
-VITE_SUPABASE_ANON_KEY=
-VITE_CLERK_PUBLISHABLE_KEY=
-```
 # Hirrd
 
 
-
-# Full Stack Job Portal - Hired
+# Full Stack Job Portal - Hired with React JS, Tailwind CSS, Supabase, Clerk, Shadcn UI 
 
 This project is a **Full Stack Job Portal App** named "Hired," which demonstrates the key skills that companies look for today. It features **authentication, job postings, applications, profile management**, and more. The app provides both **candidate** and **recruiter** functionality, offering a comprehensive platform for job seekers and employers alike.
 
@@ -50,8 +42,20 @@ This project is a **Full Stack Job Portal App** named "Hired," which demonstrate
 - Manage applications by updating the hiring status of candidates.
 - Track posted jobs and delete or modify postings as needed.
 
+
+
 ## How to Run:
 1. Clone the repository.
 2. Install the required dependencies:
    ```bash
    npm install
+
+
+### Make sure to create a `.env` file with following variables -
+
+```
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+VITE_CLERK_PUBLISHABLE_KEY=
+```
+
